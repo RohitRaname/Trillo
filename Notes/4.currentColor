@@ -1,0 +1,11 @@
+to change color according to parent  container color
+
+.parent{
+    color:orangered;
+}
+
+// then i want
+
+.child{
+    color:currentColor;
+}

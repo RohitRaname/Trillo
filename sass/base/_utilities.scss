@@ -1,0 +1,32 @@
+.paragraph {
+  line-height: 1.6;
+  font-weight: 400;
+  color: #555;
+
+  &-small {
+    font-size: 1.4rem;
+  }
+  &-medium {
+    font-size: 1.6rem;
+  }
+
+  &-large {
+    font-size: 2rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}

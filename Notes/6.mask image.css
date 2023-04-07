@@ -1,0 +1,7 @@
+/* to set svg icon color using mask property */
+
+.svg-icon{
+    mask-image: url();
+    mask-size: cover;
+    background-color: pink;
+}

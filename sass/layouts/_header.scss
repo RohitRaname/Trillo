@@ -1,0 +1,345 @@
+.header {
+  height: 7rem;
+  // background-colo6r: palegoldenrod;
+  border-bottom: 1px solid var(--color-grey-light-3);
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+  padding: 0 1.6rem;
+  padding-right: 0;
+
+  @media only screen and (max-width: 37.5em) {
+    flex-wrap: wrap;
+    // align-content: space-between;
+    // height: 14rem;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+  }
+  @media only screen and (max-width: 31.25em) {
+    height: 14rem;
+  }
+
+  &__logo {
+    &-box {
+      cursor: pointer;
+      // background-color: blueviolet;
+      // padding: 12.4rem;
+    }
+    &-img {
+      display: inline-block;
+      height: 4rem;
+      // background-color: yellow;
+      // padding-top: 3rem;
+    }
+  }
+
+  &__search {
+    &-box {
+      // background: red;
+      flex: 4;
+      display: flex;
+      align-items: center;
+      // text-align: center;
+      justify-content: center;
+      position: relative;
+    }
+    &-input {
+      border: none;
+      outline: none;
+      padding: 0.6rem 4rem;
+      border-radius: 100px;
+      flex: 0 0 70%;
+      margin-right: -3.6rem;
+      font-size: 1.8rem;
+      // box-shadow: 0 0.5rem 1rem rgba(#000, 0.1);
+      transition: all 0.3s;
+      font-family: inherit;
+      font-size: 2rem;
+      background: var(--color-grey-light-3);
+      &:focus {
+        background: var(--color-grey-light-1);
+        flex: 0 0 75%;
+        // width: 75%;
+      }
+    }
+
+    // flex set width like width property but using the remaining space
+
+    &-input:focus + &-button &-icon {
+      fill: #555;
+    }
+
+    &-button {
+      border: none;
+
+      outline: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    &-icon {
+      fill: #999;
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      &-box {
+        order: 1;
+        background: var(--color-grey-light-1);
+
+        // to start with new line for element which cant come in first row
+      }
+
+      &-input {
+        flex: 0 0 80%;
+      }
+
+      &-input:focus {
+        flex: 0 0 95%;
+      }
+    }
+  }
+
+  &__user-nav {
+    align-self: stretch;
+    flex: 1;
+    // background-color: palevioletred;
+
+    display: flex;
+    justify-content: center;
+    // align-items: stretch;
+    // gap: 1.8rem;
+
+    & > * {
+      // padding: 2rem 1.2rem;
+      transition: all 0.3s;
+      @include flex-center;
+      height: 100%;
+      padding: 0 2rem;
+    }
+
+    & > *:hover {
+      background: var(--color-grey-light-2);
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      flex: 0;
+
+      & > *:last-child {
+        padding-right: 0.4rem;
+      }
+    }
+  }
+
+  &__user-chat,
+  &__user-bookmark {
+    &-box {
+      position: relative;
+    }
+
+    &-icon {
+      height: 3.2rem;
+      width: 3.2rem;
+      fill: #777;
+    }
+    &-notification {
+      position: absolute;
+
+      color: red;
+      height: 1.75rem;
+      width: 1.75rem;
+      padding: 0.1rem 0.6rem;
+      font-size: 1.4rem;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      @include flex-center;
+      width: 1.8rem;
+
+      font-size: 1.2rem;
+    }
+  }
+
+  &__user-chat {
+    &-box {
+      position: relative;
+    }
+    &-icon {
+    }
+
+    &-notification {
+      top: 15%;
+      left: 62%;
+    }
+  }
+
+  &__user-bookmark {
+    &-box {
+      // background-color: blue;
+    }
+    &-icon {
+    }
+    &-notification {
+      top: 15%;
+      left: 50%;
+    }
+  }
+
+  &__user-info {
+    &-box {
+      display: flex;
+      align-items: center;
+      padding: 2rem;
+      gap: 1.8rem;
+      transition: all 0.3s;
+      position: relative;
+
+      // background: orangered;
+    }
+    &-img {
+      height: 4rem;
+      border-radius: 50%;
+    }
+
+    &-name {
+      font-size: 1.8rem;
+      color: #777;
+      font-weight: 500;
+    }
+  }
+}
+
+.user__dropdown {
+  position: absolute;
+  z-index: 100;
+  background: #fff;
+  top: 105%;
+  right: 10%;
+
+  width: 25rem;
+  font-size: 1.7rem;
+  border-radius: 3px;
+  box-shadow: 0 1.2rem 2.4rem rgba(#000, 0.2);
+
+  transition: all 0.3s;
+
+  &-header {
+    display: flex;
+    padding: 2rem 1.2rem;
+
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.6rem;
+    border-bottom: 1px solid rgba(#999, 0.5);
+  }
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding: 1.2rem 1.2rem;
+    padding-bottom: 2.4rem;
+  }
+
+  &-name-shape {
+    background-color: var(--color-primary);
+    padding: 1.6rem;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2.4rem;
+  }
+  &-info {
+    &-box {
+      font-size: 1.6rem;
+    }
+    &-name {
+      margin-bottom: 0.5rem;
+    }
+    &-email {
+    }
+  }
+
+  &-item {
+  }
+  &-link {
+    &:link,
+    &:visited {
+      color: #333;
+      transition: all 0.3s;
+    }
+    &:hover,
+    &:active {
+      color: var(--color-primary-dark);
+    }
+  }
+}
+
+.user__msg {
+  &-dropdown {
+    font-size: 1.6rem;
+    position: absolute;
+    z-index: 100;
+    color: #444;
+    top: 105%;
+    right: 10%;
+    background: #fff;
+    width: 45rem;
+    padding: 2.4rem 1.2rem;
+    box-shadow: 0 1.6rem 3.2rem rgba(#000, 0.3);
+  }
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.4rem;
+    border-bottom: 1px solid rgba(#999, 0.5);
+    padding-bottom: 2.4rem;
+  }
+  &-text {
+    text-align: center;
+    color: #000;
+  }
+
+  &-notification {
+  }
+  &-setting {
+  }
+}
+
+.search-dropdown {
+  // depend on its absolute element
+  // - height
+  // -width;
+  // -top
+  // -left
+  // All depend on parent no one else
+
+  box-shadow: 0 1.6rem 3.2rem rgba(#000, 0.25);
+  border-radius: 5px;
+  position: absolute;
+  font-size: 1.6rem;
+  top: 150%;
+  width: 70%;
+  background: var(--color-grey-light-2);
+  right: 14.5%;
+  z-index: 100;
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-item {
+    cursor: pointer;
+    padding: 1.2rem;
+    border-left: 0.5rem solid transparent;
+    transition: all 0.3s;
+  }
+
+  &-item:hover {
+    background: rgba(#000, 0.05);
+    color: #000;
+    border-left: 0.4rem solid var(--color-primary-dark);
+  }
+}

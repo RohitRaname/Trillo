@@ -1,0 +1,8 @@
+ye we can set flex item as a flex box 
+
+.item{
+    flex:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}

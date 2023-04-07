@@ -1,0 +1,14 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "live": "live-server",
+    "sass":"node-sass -w sass/main.scss css/style.css",
+    "start":"npm-run-all --parallel live sass"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

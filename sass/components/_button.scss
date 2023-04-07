@@ -1,0 +1,32 @@
+.btn-inline {
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: var(--color-primary);
+  border-bottom: 1px solid currentColor;
+  padding: 0.2rem;
+  display: inline-block;
+  
+  & span{
+    transition: margin .2s;
+  }
+
+  // never remove outline : none;
+
+  &:hover {
+    color: var(--color-primary-dark);
+
+    & span{
+      margin-left: 1.2rem;
+    }
+  }
+
+  &:focus {
+    // only when focus then remove ouline and never else
+    outline: none;
+    color: var(--color-primary-grey);
+    animation: zoomInAndOut 1s  ease-in-out infinite;
+  }
+
+  // if you leave it today you need to do it tomorrow if you want or not, so just sit extra five minute then next extra five minute you will win
+}
